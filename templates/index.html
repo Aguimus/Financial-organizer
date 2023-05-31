@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Gestor financiero</title>
+  <!-- BOOTSTRAP 4  -->
+  <link rel="stylesheet" href="https://bootswatch.com/4/yeti/bootstrap.min.css">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/miestilo.css')}}">
+
+</head>
+
+<body>
+
+
+
+  <div class="area">
+    <ul class="circles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <!-- NAVIGATION  -->
+    <div class="context">
+      <h1>Gestor Financiero</h1>
+  </div>
+
+    <div id="openModal" class="modalDialog">
+      <div>
+        <a href="#close" title="Close" class="close">X</a>
+        <h2>Registro completado</h2>
+        <p>Usted se ha registrado correctamente a nuestro gestor financiero.</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row p-4">
+        <div class="col-md-5 card card-body">
+          <!-- Inicio de sesión -->
+          <form id="task-form">
+            <div class="form-group">
+              <label class="mb-7 blockquote">Iniciar sesión</label>
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="CorreoI" placeholder="nombre@ejemplo.com">
+                <label for="CorreoI">Correo electronico</label>
+              </div>
+              <div class="form-floating">
+                <input type="password" class="form-control" id="ContraseñaI" placeholder="Contraseña">
+                <label for="ContraseñaI">Contraseña</label>
+              </div>
+            </div>
+            <input type="hidden" id="taskId">
+            <a id="btnIniciar" href="" class="btn btn-primary btn-block text-center btn-success">Acceder</a>
+          </form>
+        </div>
+
+        <div class="col-md-1"></div>
+
+        <!-- Registro  -->
+        <div class="col-md-5 card card-body">
+
+          <form id="task-form">
+            <label class="mb-7 blockquote">Resgistrarte</label>
+            <fieldset class="form-group">
+              <input type="text" placeholder="Nombre" id="nombreR">
+
+            </fieldset>
+            <fieldset class="form-group">
+              <input type="email" class="form-control" id="correoR" placeholder="nombre@ejemplo.com">
+            </fieldset>
+            <fieldset class="form-group"><input type="password" class="form-control" id="contraseñaR"
+                placeholder="Contraseña">
+            </fieldset>
+            <button id="btnRegistrar" type="registrarse" class="btn btn-primary btn-block text-center">
+              Registrarme
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div id="mensaje"> </div>
+
+    
+  </div>
+  <!-- Logica del Frontend  -->
+  <script src="{{url_for('static', filename='js/app.js')}}"></script>
+</body>
+
+</html>

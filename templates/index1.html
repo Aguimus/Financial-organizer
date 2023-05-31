@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gestor Financiero</title>
+    <!-- BOOTSTRAP 4  -->
+    <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
+    <!--
+    <link rel="stylesheet" href="{{url_for('static', filename='css/miestilo2.css')}}">
+    -->
+</head>
+
+<body>
+
+    <!-- NAVIGATION  -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Gestor financiero</a>
+
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <form class="form-inline my-2 my-lg-0">
+                    <a class="btn btn-success my-2 my-sm-0" type="submit" id="btnSalir">Salir</a>
+                </form>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row p-4">
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-body">
+                        <!-- Para añadir informes -->
+                        <form id="task-form">
+                            <select type="text" id="tipo" title="Tipo" class="form-control" onchange="cambio();">
+                <option value="gasto">gasto</option>
+                <option value="ingreso">ingreso</option>
+              </select>
+                            <div class="form-group">
+                                <select type="text" id="origen" title="Tipo" class="form-control">
+                  <option value="diversion">diversion</option>
+                  <option value="transporte">transporte</option>
+                  <option value="comida">comida</option>
+                  
+                </select>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="descripcion" cols="30" rows="10" class="form-control" placeholder="Descripción del ingreso o gasto"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="valor" placeholder="valor" class="form-control">
+                            </div>
+                            <input type="hidden" id="taskId">
+                            <button type="submit" class="btn btn-primary btn-block text-center" id="registrar">
+                Registrar
+              </button>
+                        </form>
+                        <blockquote>    </blockquote>
+                        <!-- Porcentajes -->
+                        <div id="circular">
+                            <ul class="chart-skills" id="grafico">
+                                <li>
+                                    <span>50</span>
+                                </li>
+                                <li>
+                                    <span>50</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TABLA  -->
+            <div class="col-md-7">
+                <div class="card my-4" id="task-result">
+                    <div class="card-body">
+                        <!-- BÚSQUEDA -->
+                        <select type="text" id="filtro" title="Tipo" class="form-control" onchange="filtro();">
+              <option value="fecha">Fecha</option>
+              <option value="valor">Valores</option>
+              <option value="tipo">Gatos/Ingresos</option>
+              <option value="origen">origen</option>
+            </select>
+                    </div>
+
+                </div>
+
+                <table class="table table-bordered table-sm">
+                    <thead>
+                        <tr>
+                            <td>Fecha</td>
+                            <td>Tipo</td>
+                            <td>Origen</td>
+                            <td>Descripción</td>
+                            <td>Valor</td>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="mensaje"> </div>
+    <!-- Logica del Frontend  -->
+    <script src="{{url_for('static', filename='js/app1.js')}}"></script>
+</body>
+
+</html>
